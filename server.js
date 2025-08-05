@@ -1,4 +1,4 @@
-// server.js
+
 import express from 'express';
 import cors from 'cors';
 import { Resend } from 'resend';
@@ -22,7 +22,7 @@ app.use(
 app.use(express.json());
 
 // تهيئة Resend
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend('re_Vycp9HWJ_3wWNpLBPmL3Q8i8N5ZNEAC22');
 
 // المسار لإرسال البريد
 app.post('/send-email', async (req, res) => {
@@ -31,7 +31,7 @@ app.post('/send-email', async (req, res) => {
   try {
     const data = await resend.emails.send({
       from: 'onboarding@resend.dev', // يمكنك تغييره لاحقًا
-      to: process.env.TO_EMAIL,     // بريدك لتستلم الرسالة
+      to: 'abrahim71192@gmail.com',     // بريدك لتستلم الرسالة
       reply_to: email,
       subject: `[موقعك] ${subject || 'رسالة جديدة'}`,
       html: `
@@ -64,7 +64,7 @@ app.get('/', (req, res) => {
   res.send('<h1>السيرفر يعمل ✅</h1>');
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`✅ السيرفر يعمل على http://localhost:${PORT}`);
 });

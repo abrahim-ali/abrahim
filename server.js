@@ -12,7 +12,7 @@ const app = express();
 // تفعيل CORS للسماح لـ React بالاتصال
 app.use(
   cors({
-    origin: 'https://zaziano.de/', // ← React يعمل هنا
+    origin: 'http://localhost:5173', // ← React يعمل هنا
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
   })
